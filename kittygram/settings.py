@@ -4,17 +4,22 @@ Django settings for kittygram project.
 
 from pathlib import Path
 from datetime import timedelta
+from dotenv import load_dotenv
+
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r4g@r7)c7)2v1ex(9x(3$!v(ajk++61*t6r4(-l&f&@t*981j$'
+SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "1") == "1"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -25,9 +30,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework_simplejwt',  # Добавлено для JWT
+    'rest_framework_simplejwt',
     'cats.apps.CatsConfig',
     'djoser',
+    'drf_spectacular',
     'django_filters'
 ]
 
@@ -107,7 +113,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 5,
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated', 
+        'rest_framework.permissions.AllowAny', 
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -121,7 +127,8 @@ REST_FRAMEWORK = {
         'anon': '1000/day',
         'low_request': '6/minute',
         'medium_request': '3/minute'
-    }
+    },
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # JWT settings
