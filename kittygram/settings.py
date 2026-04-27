@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'cats.apps.CatsConfig',
     'djoser',
     'drf_spectacular',
-    'django_filters'
+    'django_filters',
+    'cat_of_day.apps.CatOfDayConfig'
 ]
 
 MIDDLEWARE = [
