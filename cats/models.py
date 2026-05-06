@@ -28,6 +28,12 @@ class Cat(models.Model):
         User, related_name="cats", on_delete=models.CASCADE
     )
 
+    image = models.ImageField(
+        upload_to='cats/images/', 
+        null=True,  
+        default=None
+    )
+
     achievements = models.ManyToManyField(Achievement, through='AchievementCat')
 
     class Meta:
