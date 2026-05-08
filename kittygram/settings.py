@@ -32,10 +32,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'cats.apps.CatsConfig',
+    'cat_of_day.apps.CatOfDayConfig', 
     'djoser',
     'drf_spectacular',
     'django_filters',
-    'cat_of_day.apps.CatOfDayConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -150,5 +151,20 @@ DJOSER = {
     'PERMISSIONS': {
         'user': ['rest_framework.permissions.IsAuthenticated'],
         'user_list': ['rest_framework.permissions.AllowAny'],
+    },
+}
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG",
     },
 }

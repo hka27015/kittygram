@@ -3,10 +3,28 @@ version: '3.9'
 services:
   web:
     build: .
-    container_name: kittygram
+    container_name: kittygram_backend
     volumes:
-      - .:/app
-    ports:
-      - "8000:8000"
+      - static_volume:/app/static
+      - media_volume:/app/media
+      - ./db.sqlite3:/app/db.sqlite3
     env_file:
       - .env
+    restart: always
+
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: kittygram_nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
+    restart: always
+
+volumes:
+  static_volume:
+  media_volume:

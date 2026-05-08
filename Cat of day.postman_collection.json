@@ -1,0 +1,375 @@
+{
+  "info": {
+    "_postman_id": "08a0b5d1-8ae2-4954-b448-aab8907343c4",
+    "name": "Cat of day",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53754255",
+    "_collection_link": "https://go.postman.co/collection/53754255-08a0b5d1-8ae2-4954-b448-aab8907343c4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Cat of day",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/cat-of-day/today/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "cat-of-day",
+            "today",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Cat of day",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MzUzODQyLCJpYXQiOjE3NzgyNjc0NDIsImp0aSI6IjVkYzFhOTZlODc1MDQxZmNhNDFiMmU5YWM2MjU1YmZlIiwidXNlcl9pZCI6IjIifQ.PZEsO4KP2PdJskkPMg4tYVeLJTtpggtsRtLCXoQaGx0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"cat\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/cat-of-day/vote/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "cat-of-day",
+            "vote",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Cat top week",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/cat-of-day/top_week/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "cat-of-day",
+            "top_week",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get history",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/cat-of-day/history/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "cat-of-day",
+            "history",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Cat stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/cat-of-day/cat_stats/?cat_id=1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "cat-of-day",
+            "cat_stats",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cat_id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"saro2\",\r\n    \"password\": \"davtyan2saro\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/jwt/create/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "auth",
+            "jwt",
+            "create",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"saro2\",\r\n    \"password\": \"davtyan2saro\",\r\n    \"email\": \"saro2@example.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/users/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "auth",
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Prediction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MzU1NDcwLCJpYXQiOjE3NzgyNjkwNzAsImp0aSI6IjcxNWVhMTBhNjg0NjQyZWM5NWRlYzcyYjdiMGNlZDg4IiwidXNlcl9pZCI6IjIifQ.XW6pQANLEnnZ2Ub7lJ4oWnV_nVYwa962JU42j7l5BSk",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cat\": 3\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/predictions/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "predictions",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prediction Stats",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MzU1NDcwLCJpYXQiOjE3NzgyNjkwNzAsImp0aSI6IjcxNWVhMTBhNjg0NjQyZWM5NWRlYzcyYjdiMGNlZDg4IiwidXNlcl9pZCI6IjIifQ.XW6pQANLEnnZ2Ub7lJ4oWnV_nVYwa962JU42j7l5BSk",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/predictions/stats/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "predictions",
+            "stats",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cats Raiting",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MzUzODQyLCJpYXQiOjE3NzgyNjc0NDIsImp0aSI6IjVkYzFhOTZlODc1MDQxZmNhNDFiMmU5YWM2MjU1YmZlIiwidXNlcl9pZCI6IjIifQ.PZEsO4KP2PdJskkPMg4tYVeLJTtpggtsRtLCXoQaGx0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/cat-of-day/cat_rating",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "cat-of-day",
+            "cat_rating"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Users Raiting",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MzU1NDcwLCJpYXQiOjE3NzgyNjkwNzAsImp0aSI6IjcxNWVhMTBhNjg0NjQyZWM5NWRlYzcyYjdiMGNlZDg4IiwidXNlcl9pZCI6IjIifQ.XW6pQANLEnnZ2Ub7lJ4oWnV_nVYwa962JU42j7l5BSk",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/cat-of-day/user_rating/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "cat-of-day",
+            "user_rating",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Prediction",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MzU1NDcwLCJpYXQiOjE3NzgyNjkwNzAsImp0aSI6IjcxNWVhMTBhNjg0NjQyZWM5NWRlYzcyYjdiMGNlZDg4IiwidXNlcl9pZCI6IjIifQ.XW6pQANLEnnZ2Ub7lJ4oWnV_nVYwa962JU42j7l5BSk",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/predictions/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "predictions",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

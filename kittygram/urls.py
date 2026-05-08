@@ -2,7 +2,7 @@ from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.routers import DefaultRouter
 
-from cat_of_day.views import DailyCatViewSet
+from cat_of_day.views import DailyCatViewSet, PredictionViewSet
 from cats.views import (
     CatViewSet,
     UserViewSet,
@@ -13,7 +13,9 @@ router = DefaultRouter()
 router.register('cats', CatViewSet)
 router.register('users', UserViewSet)
 router.register('achievements', AchievementViewSet)
-router.register('cat-of-day', DailyCatViewSet)
+router.register('cat-of-day', DailyCatViewSet, basename="cat-of-day")
+router.register('predictions', PredictionViewSet, basename="predictions")
+
 
 urlpatterns = [
     path('', include(router.urls)),
