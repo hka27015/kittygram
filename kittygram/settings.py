@@ -11,6 +11,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret-key")
 
@@ -144,7 +145,7 @@ DJOSER = {
     'LOGIN_FIELD': 'username',
     'SERIALIZERS': {
         'user_create': 'djoser.serializers.UserCreateSerializer',
-        'user': 'cats.serializers.UserSerializer',  # Используем ваш сериализатор
+        'user': 'cats.serializers.UserSerializer',
         'current_user': 'cats.serializers.UserSerializer',
     },
     'PERMISSIONS': {

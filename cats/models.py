@@ -23,7 +23,12 @@ class Cat(models.Model):
     name = models.CharField(max_length=16)
     color = models.CharField(max_length=16, choices=CHOICES)
     birth_year = models.IntegerField()
-
+    image = models.ImageField(
+        upload_to='cats/images/', 
+        null=True,  
+        default=None
+    )
+    
     owner = models.ForeignKey(
         User, related_name="cats", on_delete=models.CASCADE
     )
